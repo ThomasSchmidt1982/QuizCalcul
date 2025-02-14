@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="FR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page index de QuizCalcul</title>
+    <link href="style/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap"
+        rel="stylesheet">
+    <script src="script\script.js" defer></script>
+</head>
+
+<body>
+
+    <!--HEADER-->
+
+    <header>
+        <nav>
+            <div>
+                <img src="style/pics/headcalc64x64.png"
+                    alt="The logo of QuizCalcul represents a calculator in the head of a man ">
+                <h1>Quiz de Calcul Mental</h1>
+                <h2>de 0 à 99 ans</h2>
+                <h3>
+                    <p>Exercez-vous au calcul mental</p>
+                </h3>
+            </div>
+        </nav>
+    </header>
+
+    <!--MAIN-->
+
+    <main>
+        <div class="zoneOptions">
+            <p>Tapez votre réponse dans le champ en-dessous.</p>
+            <div class="optionSource">
+                <p><strong>Multiplications</strong></p>
+                <label for="dixQuestions">10 questions</label>
+            </div>
+        </div>
+
+        <div class="zoneQuestion">
+            1x1= ?
+        </div>
+
+        <div class="zoneSaisie">
+            <input type="text" id="inputEcriture" name="inputEcriture">
+            <button id="btnValiderCalcul">Valider</button>
+        </div>
+
+        <div class="zoneScore">
+            Votre score : <span id="zoneDuScore">0</span>
+        </div>
+
+
+    </main>
+
+    <!--FOOTER-->
+
+    <footer>
+        <p>@Copyright : Thomas Schmidt.</p>
+    </footer>
+
+</body>
+
+</html>
