@@ -1,5 +1,3 @@
-
-
 //--- génération valeur aleatoire entiere entre min et max ---//
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
@@ -28,9 +26,8 @@ function computeAnswers(tab) {
     return res;
 }
 
-
 // fonction lancer jeu ---///
-function lancerJeu() {
+function lancerJeu(tabValAl, tabRes) {
     let i = 0
     score = 0
     let zoneQuestion = document.querySelector(".zoneQuestion")
@@ -62,11 +59,11 @@ function lancerJeu() {
     })
 }
 
-
 //--- prog principal ---//
-//function main() {
-let tabValAl = generateRandomTable();
-let tabRes = computeAnswers(tabValAl);
-lancerJeu()
+function main() {
+    let tabVal = generateRandomTable();
+    let tabR = computeAnswers(tabVal);
+    lancerJeu(tabVal, tabR);
+}
 
-//}
+main();
