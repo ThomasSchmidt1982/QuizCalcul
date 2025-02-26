@@ -11,7 +11,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap"
         rel="stylesheet">
-    <script src="script\script.js" defer></script>
+    <script type="module" src="script\script.js" defer></script>
+    <script type="module" src="script\users.js" defer></script>
+
 </head>
 
 <body>
@@ -49,15 +51,37 @@
 
         <div class="zoneSaisie">
             <input type="text" id="inputEcriture" name="inputEcriture">
-            <button id="btnValiderCalcul">Valider</button>
+            <button id="btnValiderCalcul" disabled>Valider</button>
         </div>
 
         <div class="zoneScore">
             Votre score : <span id="zoneDuScore">0</span>
         </div>
 
-
     </main>
+
+    <form id="form">
+
+        <!-- champ prénom -->
+        <label for="prenom">Prénom</label>
+        <input type="text" id="prenom" name="prenom" placeholder="Votre prenom">
+
+        <!-- champ nom -->
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" placeholder="Votre nom">
+
+        <!-- champ age -->
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" placeholder="Votre age">
+
+        <!-- champ email -->
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Votre email">
+
+        <!-- bouton de validation -->
+        <button>Envoyer</button>
+    </form>
+
 
     <!--FOOTER-->
 

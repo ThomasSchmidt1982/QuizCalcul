@@ -1,3 +1,5 @@
+let utilisateur = {};
+
 //--- génération valeur aleatoire entiere entre min et max ---//
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
@@ -39,6 +41,8 @@ function lancerJeu(tabValAl, tabRes) {
     //--- Concaténer les valeurs aléatoires a partir du tableau 2 dimensions de val aleatoires ---//
     zoneQuestion.innerText = tabValAl[0][i] + " x " + tabValAl[1][i] + " =  ? "
     zoneDuScore.innerText = score
+    // ré activation du bouton valider
+    btnValiderCalcul.disabled = false
     //--- attente de clic sur le bouton valider pour 
     btnValiderCalcul.addEventListener("click", () => {
         if (inputEcriture.value == tabRes[i]) {
@@ -46,6 +50,7 @@ function lancerJeu(tabValAl, tabRes) {
         }
         i++
         zoneDuScore.innerText = score
+        //Réinitialisation du champ de saisi
         inputEcriture.value = ''
         //--- remet la barre dans la zone de saisie ---/
         inputEcriture.focus()
@@ -54,16 +59,49 @@ function lancerJeu(tabValAl, tabRes) {
         if (i === tabRes.length) {
             zoneQuestion.innerText = "jeu terminé, Retentez votre chance !"
             // On désactive le bouton valider
-            btnValiderCalcul.disabled = true
+            btnValiderCalcul.disabled = true;
+            afficherForm();
+            afficherInstructions();
+            saisieForm();
         }
     })
 }
 
-//--- prog principal ---//
+function cacherForm() {
+    document.getElementById("form").style.display = "none";
+}
+function afficherForm() {
+    document.getElementById("form").style.display = "block";
+
+}
+function afficherInstructions() {
+    document.querySelector(".zoneOptions").innerText = 'Inscrivez votre Nom ! ! !';
+    document.querySelector(".zoneQuestion").innerText = 'Vous serez enregistré dans la base de données QuizCalcul !';
+}
+function saisieForm() {
+    document.querySelector("form").addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        let prenom = document.getElementById("prenom").value
+        let nom = document.getElementById("nom").value
+        let age = document.getElementById("age").value
+        let email = document.getElementById("email").value
+
+        utilisateur = { prenom, nom, age, email };
+
+    })
+}
+
+
+//--- definition du prog principal ---//
 function main() {
+    cacherForm();
     let tabVal = generateRandomTable();
     let tabR = computeAnswers(tabVal);
     lancerJeu(tabVal, tabR);
 }
 
+//--- Lancement prog principal ---//
 main();
+export { saisieForm, utilisateur };
+

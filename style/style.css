@@ -47,6 +47,7 @@ input[type='radio'] {
 
 
 input[type='text'],
+input[type='number'],
 input[type='email'] {
     width: 100%;
     margin-right: 10px;
@@ -60,6 +61,7 @@ input[type='email'] {
 }
 
 input[type='text']::placeholder,
+input[type='number']::placeholder,
 input[type='email']::placeholder {
     color: var(--color-secondary);
     opacity: 50%;
